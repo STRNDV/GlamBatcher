@@ -16,7 +16,7 @@ namespace GlamBatcher
     public partial class Form1 : Form
     {
         // --- CONFIGURATION ---
-        private const string CurrentVersion = "1.0.0";
+        private const string CurrentVersion = "1.0.1";
         // Hier sind jetzt DEINE echten Links eingetragen:
         private const string VersionUrl = "https://raw.githubusercontent.com/STRNDV/GlamBatcher/main/version.txt";
         private const string DownloadUrl = "https://github.com/STRNDV/GlamBatcher/releases";
@@ -264,7 +264,7 @@ namespace GlamBatcher
             }
         }
 
-        // --- 3. APPLY ---
+        // --- 3. APPLY (MIT SIGNAL LOGIK) ---
         private async void btnApply_Click(object sender, EventArgs e)
         {
             var checkedNodes = GetCheckedDesigns();
@@ -285,6 +285,7 @@ namespace GlamBatcher
             progressBar1.Maximum = checkedNodes.Count;
             progressBar1.Value = 0;
 
+            // Dateien bearbeiten
             await Task.Run(() =>
             {
                 foreach (TreeNode node in checkedNodes)
@@ -299,15 +300,27 @@ namespace GlamBatcher
                 }
             });
 
-            lblStatus.Text = "Done.";
-
-            if (MessageBox.Show("Changes applied!\nUpdate Cache (Game)?", "Done", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            // --- NEU: SIGNAL AN DAS PLUGIN SENDEN ---
+            try
             {
-                lblStatus.Text = "Contacting Game...";
-                await Task.Delay(1000);
-            }
+                // Pfad zum Plugin-Ordner definieren
+                string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string signalPath = Path.Combine(appData, "XIVLauncher", "pluginConfigs", "GlamBatcherPlugin");
 
-            if (MessageBox.Show("Exit App?", "Finished", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                // Falls Ordner nicht existiert, erstellen
+                if (!Directory.Exists(signalPath)) Directory.CreateDirectory(signalPath);
+
+                // Datei "trigger.txt" mit aktuellem Zeitstempel schreiben
+                File.WriteAllText(Path.Combine(signalPath, "trigger.txt"), DateTime.Now.ToString());
+                lblStatus.Text = "Signal sent to Game!";
+            }
+            catch
+            {
+                lblStatus.Text = "Could not trigger Plugin.";
+            }
+            // ----------------------------------------
+
+            if (MessageBox.Show("Changes applied & Signal sent!\nExit App?", "Finished", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Application.Exit();
             }
