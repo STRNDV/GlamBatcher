@@ -1,4 +1,4 @@
-## WARNING: This tool DOES edit your Glamourer designs BUT it does not update your ingame-cache yet. For now, you need to CLOSE your game BEFORE using the tool, otherwise, your game will not get the changes you have made! I'm currently working on completing the whole thing.
+## WARNING: This tool is NOT ready for use at the moment. Im currently working on every remaining issues (and I'm starting to really learn software development right now!). DO NOT USE THIS TOOL YET.
 
 ## ⚠️ Disclaimer & Authorship
 
