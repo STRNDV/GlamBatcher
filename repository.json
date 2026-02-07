@@ -5,8 +5,8 @@
     "InternalName": "GlamBatcherPlugin",
     "Description": "FFXIV Plugin for GlamBatcher. Reloads designs automatically when trigger.txt changes.",
     "Punchline": "The link between GlamBatcher and FFXIV.",
-    "RepoUrl": "https://github.com/STRNDV/[DEIN_REPO_NAME]",
-    "DownloadLinkInstall": "https://raw.githubusercontent.com/STRNDV/[DEIN_REPO_NAME]/main/latest.zip",
+    "RepoUrl": "https://github.com/STRNDV/GlamBatcher",
+    "DownloadLinkInstall": "https://raw.githubusercontent.com/STRNDV/GlamBatcher/main/latest.zip",
     "ApplicableVersion": "any",
     "DalamudApiLevel": 11
   }
