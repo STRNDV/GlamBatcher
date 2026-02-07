@@ -8,6 +8,6 @@
     "RepoUrl": "https://github.com/STRNDV/GlamBatcher",
     "DownloadLinkInstall": "https://raw.githubusercontent.com/STRNDV/GlamBatcher/main/plugin/latest.zip",
     "ApplicableVersion": "any",
-    "DalamudApiLevel": 12
+    "DalamudApiLevel": 10
   }
 ]
