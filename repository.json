@@ -1,7 +1,7 @@
 [
   {
     "Author": "STRNDV",
-    "Name": "GlamBatcherLink",
+    "Name": "GlamBatcherPlugin",
     "InternalName": "GlamBatcherPlugin",
     "Description": "FFXIV Plugin for GlamBatcher. Reloads designs automatically when trigger.txt changes.",
     "Punchline": "The link between GlamBatcher and FFXIV.",
