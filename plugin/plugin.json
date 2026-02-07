@@ -1,13 +1,14 @@
-{
-  "Author": "STRNDV",
-  "Name": "GlamBatcherPlugin",
-  "InternalName": "GlamBatcherPlugin",
-  "AssemblyVersion": "1.0.0.1",
-  "Description": "Reloads designs automatically when trigger.txt changes.",
-  "Punchline": "Automatically reloads designs via trigger file.",
-  "RepoUrl": "https://github.com/STRNDV/GlamBatcher",
-  "ApplicableVersion": "any",
-  "DalamudApiLevel": 11,
-  "IsHide": false,
-  "IsTestingExclusive": false
-}
+[
+  {
+    "Author": "STRNDV",
+    "Name": "GlamBatcherPlugin",
+    "InternalName": "GlamBatcherPlugin",
+    "Description": "Auto-reload designs.",
+    "Punchline": "Auto-reload.",
+    "RepoUrl": "https://github.com/STRNDV/GlamBatcher",
+    "DownloadLinkInstall": "https://raw.githubusercontent.com/STRNDV/GlamBatcher/main/plugin/latest.zip",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 14,
+    "AssemblyVersion": "1.0.0.1"
+  }
+]
